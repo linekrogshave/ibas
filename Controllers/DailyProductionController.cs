@@ -15,7 +15,9 @@ namespace DailyProduction.Controllers
     [Route("[controller]")]
     public class DailyProductionController : ControllerBase
     {
+        private List<DailyProductionDTO> _productionRepo;
         private readonly ILogger<DailyProductionController> _logger;
+
         private TableClient tableClient;
 
         public DailyProductionController(ILogger<DailyProductionController> logger)
@@ -23,7 +25,7 @@ namespace DailyProduction.Controllers
             var serviceUri = "https://ibasstorage.table.core.windows.net/IBASProduction2020";
             var tableName = "IBASProduction2020";
             var accountName = "ibasstorage";
-            var storageKey = "mQCl1FPEBxBmdmBYoWNREIc9b41DHjDy/LkUont9eVvlOCIYL9HQZFaEesY3i/52vHxnFR/YRZKF8kCjpnXIXw==";
+            var storageKey = "7I3FtigdUpLQqVjbBJu8hjTEIUVsWiFgeROmpd0swKo4UEuLhrGwtuXeNAFqk7f6OC963XkE8IFH+ASt8dUPLA==";
            
 
             this.tableClient = new TableClient(
